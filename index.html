@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <script src="main.js" defer></script>
+    <title>Frontend Mentor | Multi-step form</title>
+  </head>
+  <body>
+    <!-- Sidebar start -->
+    <div class="container">
+      <aside class="sidebar-step">
+        <div class="step active step-1" data-step-num>
+          <div class="number">1</div>
+
+          <div class="info">
+            <small>STEP 1</small>
+            <span>YOUR INFO</span>
+          </div>
+        </div>
+
+        <div class="step step-2" data-step-num>
+          <div class="number">2</div>
+
+          <div class="info">
+            <small>STEP 2</small>
+            <span>SELECT PLAN</span>
+          </div>
+        </div>
+
+        <div class="step step-3" data-step-num>
+          <div class="number">3</div>
+
+          <div class="info">
+            <small>STEP 3</small>
+            <span>ADD-ONS</span>
+          </div>
+        </div>
+
+        <div class="step step-4" data-step-num>
+          <div class="number">4</div>
+
+          <div class="info">
+            <small>STEP 4</small>
+            <span>SUMMARY</span>
+          </div>
+        </div>
+      </aside>
+
+      <section class="section-bg">
+        <div>
+          <div class="personal-info step-one step-active" data-step>
+            <h2 class="step-title">Personal info</h2>
+            <p class="step-paragraph">
+              Please provide your name, email address, and phone number.
+            </p>
+
+            <form data-form-step-one>
+              <div class="label-group">
+                <label for="name">Name</label>
+                <p class="error" data-error>This field is required</p>
+              </div>
+              <div class="input-group">
+                <input
+                  type="text"
+                  placeholder="e.g. Stephen King"
+                  name="name"
+                  data-name
+                />
+              </div>
+
+              <div class="label-group">
+                <label for="email">Email Address</label>
+                <p class="error" data-error>This field is required</p>
+              </div>
+              <div class="input-group">
+                <input
+                  type="email"
+                  placeholder="e.g. stephenking@lorem.com"
+                  name="email"
+                  data-email
+                />
+              </div>
+
+              <div class="label-group">
+                <label for="email">Phone Number</label>
+                <p class="error" data-error>This field is required</p>
+              </div>
+              <div class="input-group">
+                <input
+                  type="tel"
+                  placeholder="e.g. +1 234 567 890"
+                  name="tel"
+                  data-tel
+                />
+              </div>
+            </form>
+          </div>
+
+          <div class="select-your-plan step-two" data-step>
+            <h2 class="step-title">Select your plan</h2>
+            <p class="step-paragraph">
+              You have the option of monthly or yearly billing.
+            </p>
+
+            <ul>
+              <li class="active" data-list>
+                <div class="arcade"><i class="fa-solid fa-barcode"></i></div>
+                <div class="plan-monthly" data-plan-monthly>
+                  <span>Arcade</span>
+                  <span>$9/mo</span>
+                </div>
+                <div class="plan-yearly" data-plan-yearly>
+                  <span>Arcade</span>
+                  <span>$90/yr</span>
+                  <span>2 months free</span>
+                </div>
+              </li>
+              <li data-list>
+                <div class="advanced"><i class="fa-solid fa-gamepad"></i></div>
+                <div class="plan-monthly" data-plan-monthly>
+                  <span>Advanced</span>
+                  <span>$12/mo</span>
+                </div>
+                <div class="plan-yearly" data-plan-yearly>
+                  <span>Advanced</span>
+                  <span>$120/yr</span>
+                  <span>2 months free</span>
+                </div>
+              </li>
+              <li data-list>
+                <div class="pro"><i class="fa-brands fa-steam-symbol"></i></div>
+                <div class="plan-monthly" data-plan-monthly>
+                  <span>Pro</span>
+                  <span>$15/mo</span>
+                </div>
+                <div class="plan-yearly" data-plan-yearly>
+                  <span>Pro</span>
+                  <span>$150/yr</span>
+                  <span>2 months free</span>
+                </div>
+              </li>
+            </ul>
+
+            <div class="check-monthly-yearly">
+              <div class="monthly" data-monthly>Monthly</div>
+              <div class="checkbox" data-check-btn>
+                <div class="check-circle" data-check-circle></div>
+              </div>
+              <div class="yearly" data-yearly>Yearly</div>
+            </div>
+          </div>
+
+          <div class="add-ons step-three" data-step>
+            <h2 class="step-title">Pick add-ons</h2>
+            <p class="step-paragraph">
+              Add-ons help enhance your gaming experience.
+            </p>
+
+            <div class="checkbox-container">
+              <div class="add-ons-checkbox">
+                <div>
+                  <input
+                    type="checkbox"
+                    id="online-service"
+                    checked
+                    data-online-service
+                  />
+                  <div>
+                    <label for="online-service">Online service</label>
+                    <span>Access to multiplayer games</span>
+                  </div>
+                </div>
+                <span data-pick-add-month>+$1/mo</span>
+                <span class="pick-add-year" data-pick-add-year>+$10/yr</span>
+              </div>
+
+              <div class="add-ons-checkbox">
+                <div>
+                  <input
+                    type="checkbox"
+                    name=""
+                    id="larger-storage"
+                    checked
+                    data-larger-storage
+                  />
+                  <div>
+                    <label for="larger-storage">Larger storage</label>
+                    <span>Extra 1TB of cloud save</span>
+                  </div>
+                </div>
+                <span data-pick-add-month>+$2/mo</span>
+                <span class="pick-add-year" data-pick-add-year>+$20/yr</span>
+              </div>
+
+              <div class="add-ons-checkbox">
+                <div>
+                  <input
+                    type="checkbox"
+                    name=""
+                    id="larger-storage"
+                    data-customizable
+                  />
+                  <div>
+                    <label for="larger-storage">Customizable Profile</label>
+                    <span>Custom theme on your profile</span>
+                  </div>
+                </div>
+                <span data-pick-add-month>+$2/mo</span>
+                <span class="pick-add-year" data-pick-add-year>+$20/yr</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="finishing-up step-four" data-step>
+            <h2 class="step-title">Finishing up</h2>
+            <p class="step-paragraph">
+              Double-check everything looks OK before confirming.
+            </p>
+
+            <div class="summery" data-summery>
+              <div>
+                <div class="summery-header">
+                  <span class="opt-title" data-plan-choice
+                    >Arcade (Monthly)</span
+                  >
+                  <a href="#" class="gray-txt" data-change-link-btn>Change</a>
+                </div>
+                <span class="price-600" data-plan-choice-price>$9/mo</span>
+              </div>
+              <hr />
+              <br />
+
+              <div class="pick-add-summery" data-pick-add-summery></div>
+            </div>
+
+            <div class="total" data-total></div>
+          </div>
+
+          <div class="confirming-subscription step-five" data-step>
+            <div class="tick"><i class="fa-regular fa-circle-check"></i></div>
+            <h2 class="step-title">Thank you!</h2>
+            <p class="step-paragraph">
+              Thanks for confirming your subscription! We hope you have fun
+              using our platform. If you ever need support, please feel free to
+              email us at support@loremgaming.com.
+            </p>
+          </div>
+        </div>
+
+        <div class="step-btns">
+          <button class="back-btn" data-goback>Go Back</button>
+          <button class="next-btn" data-nextstep>Next Step</button>
+        </div>
+      </section>
+    </div>
+    <!-- Sidebar end -->
+
+    <!-- Footer -->
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by
+      <a href="https://btkdevkh.netlify.app/" target="_blank">Bunthoeun KONG</a
+      >.
+    </div>
+  </body>
+</html>

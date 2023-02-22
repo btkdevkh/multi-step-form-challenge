@@ -1,0 +1,451 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap");
+
+:root {
+  /* Layout */
+  --mobile: 375px;
+  --desktop: 1440px;
+
+  /* Primary */
+  --marineblue: hsl(213, 96%, 18%);
+  --purplishblue: hsl(243, 100%, 62%);
+  --pastelblue: hsl(228, 100%, 84%);
+  --lightblue: hsl(206, 94%, 87%);
+  --strawberryred: hsl(354, 84%, 57%);
+
+  /* Neutral */
+  --coolgray: hsl(231, 11%, 63%);
+  --lightgray: hsl(229, 24%, 87%);
+  --magnolia: hsl(217, 100%, 97%);
+  --alabaster: hsl(231, 100%, 99%);
+  --white: hsl(0, 0%, 100%);
+
+  /* Typography */
+  --fontsizepara: 16px;
+
+  /* Font */
+  --ubuntu: "Ubuntu";
+}
+
+/* reset styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: var(--ubuntu), sans-serif;
+  background-color: var(--magnolia);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+ul {
+  list-style-type: none;
+}
+
+/* general styles */
+.container {
+  max-width: 1024px;
+  margin: 1rem;
+  border-radius: 0.5rem;
+}
+.section-bg {
+  min-width: 320px;
+  background-color: var(--white);
+  position: absolute;
+  top: 8rem;
+  left: 1rem;
+  right: 1rem;
+  padding: 2rem;
+  border-radius: 0.5rem;
+}
+
+.step-title {
+  margin-bottom: 1rem;
+}
+.step-paragraph {
+  margin-bottom: 1.5rem;
+  color: var(--coolgray);
+  font-size: 1.1rem;
+}
+.opt-title {
+  font-weight: 600;
+  color: var(--marineblue);
+}
+.price-600 {
+  font-weight: 600;
+}
+.price-500 {
+  font-weight: 500;
+}
+.gray-txt {
+  color: var(--coolgray);
+}
+
+.step-active {
+  display: block;
+}
+.step-non-active {
+  display: none;
+}
+
+/* sidebar step */
+.sidebar-step {
+  min-width: 320px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding-top: 3rem;
+  background-color: var(--purplishblue);
+}
+.number {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid var(--pastelblue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--marineblue);
+  font-weight: 700;
+  cursor: pointer;
+  color: var(--magnolia);
+}
+.step.active .number {
+  color: var(--marineblue);
+  background-color: var(--pastelblue);
+}
+.info {
+  display: none;
+}
+
+@media (min-width: 970px) {
+  .container {
+    display: flex;
+    height: 60vh;
+  }
+  .section-bg {
+    position: unset;
+    top: unset;
+    border-top-left-radius: unset;
+    border-bottom-left-radius: unset;
+  }
+  .sidebar-step {
+    position: static;
+    height: 100%;
+    padding: 2rem;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    justify-content: start;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+  }
+  .step {
+    width: 200px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+  .info small {
+    color: var(--coolgray);
+  }
+  .info span {
+    color: var(--white);
+    font-weight: 500;
+  }
+}
+
+/* step 1: personal info */
+.personal-info .label-group {
+  margin-bottom: 0.2rem;
+  font-size: 0.9rem;
+  color: var(--marineblue);
+  font-weight: 500;
+}
+.personal-info .input-group {
+  margin-bottom: 1rem;
+}
+.personal-info .input-group input {
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 0.2rem;
+  border: 0.1rem solid var(--lightgray);
+}
+.personal-info .input-group input::placeholder {
+  color: var(--coolgray);
+  font-weight: 700;
+  font-family: inherit;
+  font-size: 0.9rem;
+}
+.label-group {
+  display: flex;
+  justify-content: space-between;
+}
+.error {
+  display: none;
+  color: var(--strawberryred);
+  font-size: 0.8rem;
+}
+
+/* step 2: select your plan */
+.select-your-plan ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+.select-your-plan ul li {
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  padding: 1rem;
+  border: 1px solid var(--lightgray);
+}
+.select-your-plan ul li.active {
+  border: 1px solid var(--marineblue);
+}
+.select-your-plan ul li .arcade,
+.select-your-plan ul li .advanced,
+.select-your-plan ul li .pro {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: var(--white);
+}
+.select-your-plan ul li .arcade {
+  background-color: sandybrown;
+}
+.select-your-plan ul li .advanced {
+  background-color: var(--strawberryred);
+}
+.select-your-plan ul li .pro {
+  background-color: var(--purplishblue);
+}
+.select-your-plan ul li div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.select-your-plan ul li div span:first-child {
+  color: var(--marineblue);
+  font-weight: 700;
+}
+.select-your-plan ul li div:last-child span:last-child {
+  color: var(--coolgray);
+}
+/* monthly & yearly */
+.select-your-plan .plan-yearly {
+  display: none;
+}
+.select-your-plan .plan-yearly.active {
+  display: flex;
+}
+.select-your-plan .plan-monthly {
+  display: flex;
+}
+.select-your-plan .plan-monthly.active {
+  display: none;
+}
+
+.select-your-plan .check-monthly-yearly {
+  padding: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  background-color: var(--magnolia);
+  border: unset;
+  border-radius: 0.5rem;
+}
+.select-your-plan .monthly {
+  color: var(--marineblue);
+  font-weight: 700;
+}
+.checkbox {
+  position: relative;
+  width: 40px;
+  height: 20px;
+  border-radius: 2rem;
+  background-color: var(--marineblue);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.check-circle {
+  width: 12px;
+  height: 12px;
+  transform: translateX(-10px);
+  border-radius: 50%;
+  background-color: var(--white);
+}
+.check-circle.active {
+  transform: translateX(10px);
+}
+
+.select-your-plan .yearly {
+  color: var(--coolgray);
+  font-weight: 700;
+}
+
+.yearly.active {
+  color: var(--marineblue);
+}
+.monthly.active {
+  color: var(--coolgray);
+}
+
+@media (min-width: 970px) {
+  .select-your-plan ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+/* step 3: add-ons */
+.checkbox-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.add-ons-checkbox {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid var(--purplishblue);
+  border-radius: 0.5rem;
+}
+.add-ons-checkbox div {
+  display: flex;
+  align-items: center;
+}
+.add-ons-checkbox div div {
+  margin-left: 1rem;
+  display: flex;
+  flex-flow: column;
+  align-items: start;
+}
+.add-ons-checkbox div div label {
+  color: var(--marineblue);
+  font-weight: bold;
+}
+.add-ons-checkbox div div span {
+  color: var(--coolgray);
+}
+.add-ons-checkbox span {
+  color: var(--purplishblue);
+}
+input[type="checkbox"] {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+.pick-add-year {
+  display: none;
+}
+
+/* finishing-up */
+.finishing-up .summery {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: var(--alabaster);
+}
+.finishing-up .summery div {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+.summery-header {
+  display: flex;
+  gap: 0.1rem;
+}
+.finishing-up .summery .pick-add-summery {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+.total {
+  padding: 1.5rem 1rem 0 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+.total-price {
+  color: var(--purplishblue);
+  font-weight: 600;
+}
+
+/* step 5: confirming-subscription */
+.confirming-subscription {
+  text-align: center;
+}
+.tick {
+  width: 50px;
+  height: 50px;
+  margin: auto;
+  padding: 1.7rem;
+  border-radius: 50%;
+  background-color: var(--strawberryred);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+.confirming-subscription i {
+  font-size: 2rem;
+  color: var(--white);
+}
+
+/* Step Button */
+.step-btns {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+.step-btns button {
+  padding: 0.6rem 1rem;
+  background-color: var(--marineblue);
+  color: var(--alabaster);
+  font-family: inherit;
+  border-radius: 0.2rem;
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.step-btns .back-btn {
+  visibility: hidden;
+  background-color: transparent;
+  color: var(--coolgray);
+  border: unset;
+}
+.step-btns .back-btn.active {
+  visibility: visible;
+}
+
+/* footer */
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
