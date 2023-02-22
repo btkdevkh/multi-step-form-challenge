@@ -105,7 +105,8 @@ ul {
   align-items: flex-start;
   gap: 0.75rem;
   padding-top: 3rem;
-  background-color: var(--purplishblue);
+  background: url("../images/bg-sidebar-mobile.svg") center center / cover
+    no-repeat;
 }
 .number {
   width: 40px;
@@ -131,13 +132,14 @@ ul {
 @media (min-width: 970px) {
   .container {
     display: flex;
-    height: 60vh;
+    gap: 0.5rem;
+    height: 70vh;
+    padding: 0.5rem;
+    background-color: var(--alabaster);
   }
   .section-bg {
     position: unset;
     top: unset;
-    border-top-left-radius: unset;
-    border-bottom-left-radius: unset;
   }
   .sidebar-step {
     position: static;
@@ -147,8 +149,9 @@ ul {
     gap: 2rem;
     align-items: center;
     justify-content: start;
-    border-top-left-radius: 0.5rem;
-    border-bottom-left-radius: 0.5rem;
+    border-radius: 0.5rem;
+    background: url("../images/bg-sidebar-desktop.svg") center center / cover
+      no-repeat;
   }
   .step {
     width: 200px;
@@ -399,20 +402,8 @@ input[type="checkbox"] {
   text-align: center;
 }
 .tick {
-  width: 50px;
-  height: 50px;
   margin: auto;
-  padding: 1.7rem;
-  border-radius: 50%;
-  background-color: var(--strawberryred);
-  display: flex;
-  align-items: center;
-  justify-content: center;
   margin-bottom: 1rem;
-}
-.confirming-subscription i {
-  font-size: 2rem;
-  color: var(--white);
 }
 
 /* Step Button */
