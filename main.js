@@ -199,7 +199,6 @@ function next() {
   // console.log(customizable)
 
   totalPlanPrice = arcade ?? advanced ?? pro
-
   finishSummeryView()
 }
 
@@ -341,23 +340,16 @@ changeLinkBtn.addEventListener("click", () => {
   yearlySelected = !yearlySelected
 
   if (yearlySelected) {
-    arcade = 90
-    advanced = 120
-    pro = 150
-
-    onlineService = 10
-    largerStorage = 20
-    customizable = 20
+    if (arcade != undefined) arcade = 90
+    if (advanced != undefined) advanced = 120
+    if (pro != undefined) pro = 150
   } else {
-    arcade = 9
-    advanced = 12
-    pro = 15
-
-    onlineService = 1
-    largerStorage = 2
-    customizable = 2
+    if (arcade != undefined) arcade = 9
+    if (advanced != undefined) advanced = 12
+    if (pro != undefined) pro = 15
   }
 
+  totalPlanPrice = arcade ?? advanced ?? pro
   finishSummeryView()
 })
 nextStepBtn.addEventListener("click", next)
